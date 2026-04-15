@@ -3,36 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shardana Consulting — Il tuo sistema di acquisizione clienti</title>
-  <meta name="description" content="Costruiamo l'ecosistema digitale che ti dà le basi per monetizzare e scalare la tua professione — e ti accompagniamo mentre lo fai crescere. Quello che le altre agenzie non ti hanno mai dato.">
-  <meta property="og:title" content="Shardana Consulting — L'ecosistema digitale che ti mancava">
-  <meta property="og:description" content="Non solo un sistema. Ti costruiamo le fondamenta reali e ti accompagniamo lungo tutto il percorso di crescita.">
+  <title>Shardana Consulting — Il sistema di acquisizione che ti mancava</title>
+  <meta name="description" content="Costruiamo l'ecosistema digitale per monetizzare e scalare la tua professione. Done for you, dall'inizio alla crescita. Per coach, consulenti, nutrizionisti, psicologi.">
+  <meta property="og:title" content="Shardana Consulting — Il sistema di acquisizione che ti mancava">
+  <meta property="og:description" content="Non solo un sistema: le fondamenta reali per monetizzare e scalare la tua professione. Done for you.">
   <meta property="og:type" content="website">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
   <style>
-    /* ══════════════════════════════════════════
+    /* ─────────────────────────────────────────
        RESET & TOKENS
-    ══════════════════════════════════════════ */
+    ───────────────────────────────────────── */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; font-size: 16px; }
 
     :root {
-      --bg:        #0a0a0a;
-      --bg2:       #0f0f0f;
-      --surface:   #141414;
-      --border:    #1e1e1e;
-      --orange:    #FF6200;
-      --orange2:   #e85500;
-      --white:     #ffffff;
-      --gray:      #aaaaaa;
-      --gray-dark: #333333;
-      --display:   'Barlow Condensed', sans-serif;
-      --body:      'Barlow', sans-serif;
-      --max:       1100px;
+      --bg:      #0a0a0a;
+      --bg2:     #0d0d0d;
+      --surface: #141414;
+      --border:  #1e1e1e;
+      --orange:  #FF6200;
+      --orange2: #e85500;
+      --white:   #ffffff;
+      --gray:    #aaaaaa;
+      --dim:     #555555;
+      --display: 'Barlow Condensed', sans-serif;
+      --body:    'Barlow', sans-serif;
+      --max:     1080px;
     }
 
     body {
@@ -43,41 +43,44 @@
       overflow-x: hidden;
     }
 
+    /* ─────────────────────────────────────────
+       LAYOUT
+    ───────────────────────────────────────── */
     .wrap {
       width: 100%;
       max-width: var(--max);
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 20px;
     }
+    @media (min-width: 768px) { .wrap { padding: 0 32px; } }
 
-    /* ── Scroll reveal ── */
+    section { padding: 72px 0; }
+    @media (min-width: 768px) { section { padding: 100px 0; } }
+
+    .h-line { width: 100%; height: 1px; background: var(--border); }
+    .orange-bar { width: 48px; height: 4px; background: var(--orange); border-radius: 2px; }
+
+    /* ─────────────────────────────────────────
+       SCROLL REVEAL
+    ───────────────────────────────────────── */
     .reveal {
       opacity: 0;
-      transform: translateY(32px);
-      transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1),
-                  transform 0.7s cubic-bezier(0.22,1,0.36,1);
+      transform: translateY(28px);
+      transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.65s cubic-bezier(0.22,1,0.36,1);
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-    .reveal-delay-5 { transition-delay: 0.5s; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: 0.1s; }
+    .d2 { transition-delay: 0.2s; }
+    .d3 { transition-delay: 0.3s; }
+    .d4 { transition-delay: 0.4s; }
 
-    /* ── Typography ── */
-    .display {
-      font-family: var(--display);
-      font-weight: 900;
-      text-transform: uppercase;
-      line-height: 1.0;
-      letter-spacing: 0.5px;
-    }
+    /* ─────────────────────────────────────────
+       TYPOGRAPHY
+    ───────────────────────────────────────── */
     .label {
       font-family: var(--display);
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: 5px;
       text-transform: uppercase;
@@ -86,20 +89,24 @@
     .section-title {
       font-family: var(--display);
       font-weight: 900;
-      font-size: clamp(42px, 6vw, 72px);
+      font-size: clamp(40px, 8vw, 70px);
       text-transform: uppercase;
-      line-height: 1.05;
-      letter-spacing: 0.5px;
+      line-height: 1.02;
+      letter-spacing: 0.3px;
     }
     .orange { color: var(--orange); }
+    strong { font-weight: 700; color: var(--white); }
 
-    /* ── Buttons ── */
+    /* ─────────────────────────────────────────
+       BUTTONS
+    ───────────────────────────────────────── */
     .btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
       font-family: var(--display);
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 2px;
@@ -109,183 +116,63 @@
       cursor: pointer;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       text-decoration: none;
+      line-height: 1;
     }
     .btn-primary {
       background: var(--orange);
       color: #fff;
-      box-shadow: 0 0 48px rgba(255,98,0,0.3);
+      box-shadow: 0 0 40px rgba(255,98,0,0.28);
     }
     .btn-primary:hover {
-      transform: translateY(-2px) scale(1.03);
-      box-shadow: 0 0 70px rgba(255,98,0,0.5);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 0 64px rgba(255,98,0,0.50);
     }
-    .btn-ghost {
-      background: transparent;
-      color: var(--white);
-      border: 2px solid var(--gray-dark);
-    }
-    .btn-ghost:hover {
-      border-color: var(--orange);
-      color: var(--orange);
-    }
+    .btn-full { width: 100%; }
+    @media (min-width: 480px) { .btn-full { width: auto; } }
 
-    /* ── Section spacing ── */
-    section { padding: 100px 0; }
-    @media (max-width: 768px) { section { padding: 72px 0; } }
-
-    /* ── Divider ── */
-    .h-line {
-      width: 100%;
-      height: 1px;
-      background: var(--border);
-    }
-    .orange-dash {
-      width: 52px;
-      height: 4px;
-      background: var(--orange);
-      border-radius: 2px;
-    }
-
-    /* ── Corner brackets ── */
-    .bracketed {
-      position: relative;
-    }
-    .bracketed::before,
-    .bracketed::after {
-      content: '';
-      position: absolute;
-      width: 28px;
-      height: 28px;
-      border-color: #2e2e2e;
-      border-style: solid;
-      transition: border-color 0.3s ease;
-    }
-    .bracketed::before { top: -8px; left: -8px; border-width: 2px 0 0 2px; }
-    .bracketed::after  { bottom: -8px; right: -8px; border-width: 0 2px 2px 0; }
-
-
-    /* ══════════════════════════════════════════
-       GHL INLINE FORM
-    ══════════════════════════════════════════ */
+    /* ─────────────────────────────────────────
+       GHL FORM WRAPPER
+    ───────────────────────────────────────── */
     .ghl-wrap {
-      margin-top: 48px;
-      background: var(--surface);
-      border: 1px solid var(--border);
+      width: 100%;
       border-radius: 14px;
       overflow: hidden;
-      max-width: 580px;
+      background: var(--surface);
+      border: 1px solid var(--border);
     }
     .ghl-wrap iframe {
       display: block;
       width: 100%;
       height: 993px;
       border: none;
-      border-radius: 3px;
-    }
-    .ghl-note {
-      text-align: center;
-      font-size: 12px;
-      color: #333;
-      letter-spacing: 1px;
-      margin-top: 14px;
     }
 
-    /* ══════════════════════════════════════════
-       POPUP MODAL
-    ══════════════════════════════════════════ */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.88);
-      backdrop-filter: blur(8px);
-      z-index: 99999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-    .modal-overlay.open {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .modal-box {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-      max-height: 88vh;
-      width: 100%;
-      max-width: 540px;
-      position: relative;
-      transform: translateY(20px) scale(0.97);
-      transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
-    }
-    .modal-overlay.open .modal-box {
-      transform: translateY(0) scale(1);
-    }
-    .modal-box iframe {
-      display: block;
-      width: 100%;
-      height: 993px;
-      border: none;
-      border-radius: 3px;
-    }
-    .modal-close {
-      position: absolute;
-      top: 14px; right: 14px;
-      z-index: 10;
-      width: 34px; height: 34px;
-      border-radius: 50%;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: #888;
-      font-size: 16px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .modal-close:hover { color: var(--white); border-color: #555; }
-
-
-    /* ══════════════════════════════════════════
+    /* ─────────────────────────────────────────
        HERO
-    ══════════════════════════════════════════ */
+    ───────────────────────────────────────── */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: 60px;
-      padding-bottom: 80px;
+      padding-top: 56px;
+      padding-bottom: 0;
       position: relative;
       overflow: hidden;
     }
 
-    /* Animated grain overlay */
-    .hero::before {
+    .hero-glow {
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 800px; height: 500px;
+      background: radial-gradient(ellipse at top, rgba(255,98,0,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    /* Grain texture */
+    .hero::after {
       content: '';
       position: absolute;
       inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      opacity: 0.6;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* Subtle radial glow behind headline */
-    .hero-glow {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 700px;
-      height: 700px;
-      background: radial-gradient(circle, rgba(255,98,0,0.06) 0%, transparent 70%);
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      opacity: 0.5;
       pointer-events: none;
       z-index: 0;
     }
@@ -293,806 +180,484 @@
     .hero-inner {
       position: relative;
       z-index: 1;
-      max-width: 860px;
     }
 
-    .hero-pre {
+    .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 40px;
+      gap: 10px;
+      margin-bottom: 32px;
       opacity: 0;
-      animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.1s forwards;
+      animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.05s forwards;
     }
-    .hero-pre-dot {
-      width: 8px; height: 8px;
+    .hero-badge-dot {
+      width: 7px; height: 7px;
       border-radius: 50%;
       background: var(--orange);
-      animation: pulse 2s ease-in-out infinite;
+      animation: pulse 2.2s ease-in-out infinite;
     }
     @keyframes pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.85); }
+      50% { opacity: 0.4; transform: scale(0.8); }
     }
 
     .hero-headline {
       font-family: var(--display);
       font-weight: 900;
-      font-size: clamp(54px, 9vw, 116px);
+      font-size: clamp(56px, 11vw, 118px);
       text-transform: uppercase;
-      line-height: 0.96;
+      line-height: 0.95;
       letter-spacing: 0.5px;
-      margin-bottom: 36px;
+      margin-bottom: 28px;
       opacity: 0;
-      animation: fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.25s forwards;
+      animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.2s forwards;
     }
 
     .hero-sub {
-      font-size: clamp(17px, 2.5vw, 22px);
-      font-weight: 400;
-      color: #d0d0d0;
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: #c0c0c0;
       line-height: 1.65;
-      max-width: 620px;
-      margin-bottom: 52px;
+      max-width: 580px;
+      margin-bottom: 40px;
       opacity: 0;
-      animation: fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.4s forwards;
+      animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.35s forwards;
     }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 20px;
+    .hero-form-wrap {
       opacity: 0;
-      animation: fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.55s forwards;
+      animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.5s forwards;
+      max-width: 600px;
     }
-
-    .hero-note {
-      font-size: 13px;
-      color: #444;
-      letter-spacing: 0.5px;
-    }
-
-    .hero-scroll-hint {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      opacity: 0;
-      animation: fadeUp 1s cubic-bezier(0.22,1,0.36,1) 1.2s forwards;
-    }
-    .hero-scroll-hint span {
-      font-size: 10px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: #333;
-    }
-    .scroll-line {
-      width: 1px;
-      height: 48px;
-      background: linear-gradient(to bottom, var(--orange), transparent);
-      animation: scrollLine 1.8s ease-in-out infinite;
-    }
-    @keyframes scrollLine {
-      0% { transform: scaleY(0); transform-origin: top; }
-      50% { transform: scaleY(1); transform-origin: top; }
-      50.001% { transform: scaleY(1); transform-origin: bottom; }
-      100% { transform: scaleY(0); transform-origin: bottom; }
+    .hero-form-note {
+      font-size: 12px;
+      color: var(--dim);
+      letter-spacing: 1px;
+      text-align: center;
+      margin-top: 12px;
     }
 
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
+      from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-
-    /* ══════════════════════════════════════════
-       SOCIAL PROOF BAR
-    ══════════════════════════════════════════ */
+    /* ─────────────────────────────────────────
+       PROOF BAR
+    ───────────────────────────────────────── */
     .proof-bar {
-      padding: 32px 0;
+      padding: 28px 0;
+      background: var(--bg2);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      background: var(--bg2);
     }
     .proof-inner {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 60px;
       flex-wrap: wrap;
+      justify-content: center;
+      gap: 28px 40px;
     }
-    .proof-stat {
-      text-align: center;
-    }
+    .proof-stat { text-align: center; }
     .proof-number {
       font-family: var(--display);
-      font-size: 42px;
       font-weight: 900;
+      font-size: 36px;
       color: var(--orange);
       line-height: 1;
     }
-    .proof-desc {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 2px;
+    .proof-label {
+      font-size: 11px;
+      color: var(--dim);
       text-transform: uppercase;
-      color: #444;
-      margin-top: 6px;
+      letter-spacing: 2px;
+      margin-top: 4px;
     }
     .proof-sep {
       width: 1px;
-      height: 48px;
       background: var(--border);
+      align-self: stretch;
+      display: none;
     }
-    @media (max-width: 600px) {
-      .proof-inner { gap: 32px; }
-      .proof-sep { display: none; }
-    }
+    @media (min-width: 600px) { .proof-sep { display: block; } }
 
+    /* ─────────────────────────────────────────
+       PAIN SECTION
+    ───────────────────────────────────────── */
+    .pain-header { margin-bottom: 40px; }
+    .pain-header .section-title { margin-top: 16px; }
 
-    /* ══════════════════════════════════════════
-       PAIN — "Riconosci questo?"
-    ══════════════════════════════════════════ */
-    .pain-header {
-      text-align: center;
-      margin-bottom: 64px;
-    }
-    .pain-header .label { margin-bottom: 20px; display: block; }
-
-    .pain-grid {
+    .pain-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-bottom: 48px;
     }
+    @media (min-width: 640px) { .pain-cards { grid-template-columns: repeat(3, 1fr); } }
 
     .pain-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 32px;
+      padding: 28px 24px;
       position: relative;
-      transition: border-color 0.3s ease, transform 0.3s ease;
-    }
-    .pain-card:hover {
-      border-color: rgba(255,98,0,0.3);
-      transform: translateY(-4px);
     }
     .pain-card-quote {
-      position: absolute;
-      top: 20px;
-      right: 24px;
       font-family: var(--display);
-      font-size: 60px;
+      font-size: 56px;
       font-weight: 900;
-      color: var(--orange);
-      opacity: 0.08;
+      color: var(--border);
       line-height: 1;
+      margin-bottom: 8px;
     }
-    .pain-card-icon {
-      width: 40px;
-      height: 40px;
-      background: rgba(255,98,0,0.1);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-      font-size: 18px;
-    }
+    .pain-card-icon { font-size: 28px; margin-bottom: 16px; }
     .pain-card p {
-      font-size: 17px;
+      font-size: 15px;
+      color: var(--gray);
       line-height: 1.65;
-      color: #aaa;
-    }
-    .pain-card strong {
-      color: var(--white);
-      font-weight: 600;
     }
 
-    .pain-cta-row {
-      text-align: center;
-      margin-top: 64px;
+    .pain-cta {
+      border-top: 1px solid var(--border);
+      padding-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
     }
-    .pain-cta-row p {
-      font-size: 20px;
-      color: #555;
-      margin-bottom: 32px;
+    @media (min-width: 640px) {
+      .pain-cta {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
     }
-    .pain-cta-row strong {
-      color: var(--white);
+    .pain-cta p {
+      font-size: clamp(16px, 2.5vw, 19px);
+      color: var(--gray);
+      line-height: 1.5;
+      max-width: 520px;
     }
 
-
-    /* ══════════════════════════════════════════
-       REFRAME — "Non è colpa tua."
-    ══════════════════════════════════════════ */
+    /* ─────────────────────────────────────────
+       REFRAME
+    ───────────────────────────────────────── */
     .reframe {
       background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
     .reframe-inner {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
+      grid-template-columns: 1fr;
+      gap: 40px;
     }
-    @media (max-width: 860px) {
-      .reframe-inner { grid-template-columns: 1fr; gap: 48px; }
+    @media (min-width: 768px) {
+      .reframe-inner { grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
     }
     .reframe-headline {
       font-family: var(--display);
-      font-size: clamp(52px, 7vw, 88px);
       font-weight: 900;
+      font-size: clamp(72px, 15vw, 140px);
       text-transform: uppercase;
-      line-height: 1.0;
+      line-height: 0.9;
     }
     .reframe-body p {
-      font-size: 18px;
-      line-height: 1.8;
-      color: #888;
-      margin-bottom: 24px;
+      color: var(--gray);
+      line-height: 1.7;
+      font-size: 16px;
+      margin-bottom: 20px;
     }
-    .reframe-body strong { color: var(--white); font-weight: 600; }
-    .reframe-chain {
+    .reframe-body p:last-child { margin-bottom: 0; }
+
+    .chain {
       display: flex;
       flex-direction: column;
-      gap: 4px;
-      margin: 32px 0;
-      padding: 28px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--orange);
-      border-radius: 8px;
+      gap: 0;
+      margin: 28px 0;
     }
     .chain-step {
-      font-family: var(--display);
-      font-size: 22px;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: #555;
-      letter-spacing: 1px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
     }
     .chain-arrow {
-      font-size: 14px;
-      color: var(--orange);
-      padding-left: 4px;
-    }
-    .chain-step.active { color: var(--white); }
-    .chain-step.orange { color: var(--orange); }
-
-
-    /* ══════════════════════════════════════════
-       SOLUTION — "Cosa costruiamo per te"
-    ══════════════════════════════════════════ */
-    .solution-header {
       text-align: center;
-      margin-bottom: 72px;
+      color: var(--dim);
+      font-size: 18px;
+      padding: 4px 0;
     }
-    .solution-header .label { margin-bottom: 20px; display: block; }
-    .solution-header p {
-      font-size: 20px;
-      color: #666;
-      max-width: 620px;
-      margin: 24px auto 0;
-      line-height: 1.7;
+    .chain-step.end {
+      border-color: rgba(255,98,0,0.3);
+      background: rgba(255,98,0,0.06);
+      color: var(--orange);
     }
+
+    /* ─────────────────────────────────────────
+       BENEFITS
+    ───────────────────────────────────────── */
+    .benefits-header { margin-bottom: 40px; }
+    .benefits-header .section-title { margin-top: 16px; }
 
     .benefits-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-bottom: 48px;
     }
+    @media (min-width: 560px) { .benefits-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 900px) { .benefits-grid { grid-template-columns: repeat(3, 1fr); } }
 
     .benefit-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 36px 32px;
-      position: relative;
-      overflow: hidden;
-      transition: border-color 0.3s ease, transform 0.3s ease;
+      border-radius: 12px;
+      padding: 28px 24px;
+      transition: border-color 0.25s ease;
     }
-    .benefit-card:hover {
-      border-color: rgba(255,98,0,0.25);
-      transform: translateY(-5px);
-    }
-    .benefit-card::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--orange);
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-    .benefit-card:hover::after {
-      transform: scaleX(1);
-    }
+    .benefit-card:hover { border-color: rgba(255,98,0,0.25); }
     .benefit-num {
       font-family: var(--display);
-      font-size: 72px;
+      font-size: 36px;
       font-weight: 900;
-      color: var(--orange);
-      opacity: 0.08;
-      position: absolute;
-      top: 16px;
-      right: 20px;
+      color: var(--border);
       line-height: 1;
+      margin-bottom: 16px;
     }
-    .benefit-icon {
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
+    .benefit-icon { font-size: 28px; margin-bottom: 14px; }
     .benefit-title {
       font-family: var(--display);
-      font-size: 28px;
+      font-size: 22px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
     .benefit-desc {
-      font-size: 16px;
+      font-size: 14px;
+      color: var(--gray);
       line-height: 1.65;
-      color: #777;
     }
 
-
-    /* ══════════════════════════════════════════
-       PROCESS — "Come funziona"
-    ══════════════════════════════════════════ */
-    .process {
-      background: var(--bg2);
-    }
-    .process-header {
-      text-align: center;
-      margin-bottom: 80px;
-    }
-    .process-header .label { margin-bottom: 20px; display: block; }
-
-    .steps {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 0;
-      position: relative;
-    }
-    .steps::before {
-      content: '';
-      position: absolute;
-      top: 36px;
-      left: calc(16.66% + 36px);
-      right: calc(16.66% + 36px);
-      height: 1px;
-      background: linear-gradient(90deg, var(--orange) 0%, var(--orange) 50%, transparent 100%);
-      opacity: 0.3;
-    }
-    @media (max-width: 720px) {
-      .steps { grid-template-columns: 1fr; }
-      .steps::before { display: none; }
-    }
-
-    .step {
-      padding: 0 32px;
-      text-align: center;
-      position: relative;
-    }
-    @media (max-width: 720px) {
-      .step {
-        padding: 0 0 48px;
-        text-align: left;
-        display: flex;
-        gap: 24px;
-      }
-    }
-    .step-num {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: var(--surface);
-      border: 2px solid var(--border);
+    /* Highlight card */
+    .benefit-card.highlight {
+      background: rgba(255,98,0,0.05);
+      border-color: rgba(255,98,0,0.18);
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
-      margin: 0 auto 28px;
+      text-align: center;
+      gap: 14px;
+    }
+    .highlight-sub {
       font-family: var(--display);
-      font-size: 28px;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--dim);
+    }
+    .highlight-main {
+      font-family: var(--display);
+      font-size: 30px;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--orange);
+      line-height: 1.1;
+    }
+    .highlight-desc {
+      font-size: 13px;
+      color: var(--dim);
+      line-height: 1.6;
+    }
+
+    .benefits-cta { text-align: center; }
+
+    /* ─────────────────────────────────────────
+       PROCESS
+    ───────────────────────────────────────── */
+    .process-header { margin-bottom: 48px; }
+    .process-header .section-title { margin-top: 16px; }
+
+    .steps { display: flex; flex-direction: column; }
+    .step {
+      display: flex;
+      gap: 20px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .step:first-child { border-top: 1px solid var(--border); }
+    .step-num {
+      font-family: var(--display);
+      font-size: 52px;
       font-weight: 900;
       color: var(--orange);
+      opacity: 0.2;
+      line-height: 1;
       flex-shrink: 0;
-      transition: border-color 0.3s ease, background 0.3s ease;
+      width: 56px;
     }
-    .step:hover .step-num {
-      border-color: var(--orange);
-      background: rgba(255,98,0,0.08);
+    .step-body { flex: 1; }
+    .step-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--orange);
+      background: rgba(255,98,0,0.1);
+      border: 1px solid rgba(255,98,0,0.2);
+      border-radius: 4px;
+      padding: 3px 10px;
+      margin-bottom: 10px;
     }
-    @media (max-width: 720px) {
-      .step-num { margin: 0; }
-    }
-    .step-body {}
     .step-title {
       font-family: var(--display);
       font-size: 26px;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 14px;
+      margin-bottom: 8px;
     }
     .step-desc {
-      font-size: 16px;
-      color: #666;
+      font-size: 15px;
+      color: var(--gray);
       line-height: 1.65;
     }
-    .step-badge {
-      display: inline-block;
-      background: rgba(255,98,0,0.1);
-      color: var(--orange);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 4px 12px;
-      border-radius: 100px;
-      margin-bottom: 14px;
-    }
 
+    .process-cta { margin-top: 48px; text-align: center; }
 
-    /* ══════════════════════════════════════════
-       FOR WHO — "È per te se..."
-    ══════════════════════════════════════════ */
-    .forwho-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: start;
-    }
-    @media (max-width: 820px) {
-      .forwho-inner { grid-template-columns: 1fr; }
-    }
-    .forwho-block {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 40px;
-    }
-    .forwho-block.yes { border-top: 3px solid var(--orange); }
-    .forwho-block.no  { border-top: 3px solid #2a2a2a; }
-    .forwho-title {
-      font-family: var(--display);
-      font-size: 32px;
-      font-weight: 900;
-      text-transform: uppercase;
-      margin-bottom: 28px;
-    }
-    .forwho-block.no .forwho-title { color: #444; }
-    .forwho-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
-    .forwho-list li {
-      display: flex;
-      gap: 14px;
-      font-size: 17px;
-      line-height: 1.55;
-      color: #888;
-      align-items: flex-start;
-    }
-    .forwho-list li strong { color: var(--white); font-weight: 600; }
-    .check { color: var(--orange); font-size: 18px; flex-shrink: 0; margin-top: 1px; }
-    .cross { color: #333; font-size: 18px; flex-shrink: 0; margin-top: 1px; }
-
-
-    /* ══════════════════════════════════════════
-       FORM — Lead capture
-    ══════════════════════════════════════════ */
+    /* ─────────────────────────────────────────
+       BOTTOM FORM SECTION
+    ───────────────────────────────────────── */
     .form-section {
       background: var(--bg2);
+      border-top: 1px solid var(--border);
     }
-    .form-wrapper {
-      max-width: 680px;
+    .form-inner {
+      max-width: 620px;
       margin: 0 auto;
-    }
-    .form-header {
       text-align: center;
-      margin-bottom: 56px;
     }
-    .form-header .label { margin-bottom: 20px; display: block; }
-    .form-header p {
-      font-size: 19px;
-      color: #666;
-      line-height: 1.65;
-      margin-top: 20px;
-    }
-
-    .lead-form {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-    @media (max-width: 600px) {
-      .lead-form { grid-template-columns: 1fr; }
-    }
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .field.full { grid-column: 1 / -1; }
-    .field label {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #444;
-    }
-    .field input,
-    .field select,
-    .field textarea {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 16px 20px;
+    .form-inner .section-title { margin: 16px 0 16px; }
+    .form-inner .form-sub {
+      color: var(--gray);
       font-size: 16px;
-      font-family: var(--body);
-      color: var(--white);
-      outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-      appearance: none;
-      -webkit-appearance: none;
-    }
-    .field input::placeholder,
-    .field textarea::placeholder { color: #3a3a3a; }
-    .field input:focus,
-    .field select:focus,
-    .field textarea:focus {
-      border-color: var(--orange);
-      box-shadow: 0 0 0 3px rgba(255,98,0,0.1);
-    }
-    .field select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23555' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 18px center;
-      padding-right: 44px;
-    }
-    .field select option { background: #1a1a1a; color: var(--white); }
-
-    .form-submit {
-      grid-column: 1 / -1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-      margin-top: 12px;
-    }
-    .form-submit .btn {
-      width: 100%;
-      justify-content: center;
-      font-size: 24px;
-      padding: 22px;
-    }
-    .form-note {
-      font-size: 13px;
-      color: #333;
-      text-align: center;
-      line-height: 1.6;
-    }
-
-    /* Success state */
-    .form-success {
-      display: none;
-      text-align: center;
-      padding: 60px 40px;
-      background: var(--surface);
-      border: 1px solid rgba(255,98,0,0.2);
-      border-radius: 14px;
-    }
-    .form-success.visible { display: block; }
-    .success-icon {
-      font-size: 56px;
-      margin-bottom: 24px;
-    }
-    .form-success h3 {
-      font-family: var(--display);
-      font-size: 42px;
-      font-weight: 900;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-    .form-success p {
-      font-size: 18px;
-      color: #666;
       line-height: 1.65;
+      margin-bottom: 40px;
     }
-
-
-    /* ══════════════════════════════════════════
-       FAQ
-    ══════════════════════════════════════════ */
-    .faq-header {
+    .form-inner .ghl-wrap { text-align: left; }
+    .form-note {
+      font-size: 12px;
+      color: var(--dim);
+      letter-spacing: 0.5px;
+      margin-top: 14px;
       text-align: center;
-      margin-bottom: 56px;
     }
-    .faq-list {
-      max-width: 760px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-    }
+
+    /* ─────────────────────────────────────────
+       FAQ
+    ───────────────────────────────────────── */
+    .faq-section { border-top: 1px solid var(--border); }
+    .faq-header { margin-bottom: 40px; }
+    .faq-header .section-title { margin-top: 16px; }
+
+    .faq-list { max-width: 760px; }
+
+    .faq-item { border-bottom: 1px solid var(--border); }
     .faq-item:first-child { border-top: 1px solid var(--border); }
+
     .faq-q {
       width: 100%;
-      background: transparent;
+      background: none;
       border: none;
-      padding: 28px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      cursor: pointer;
-      text-align: left;
-    }
-    .faq-q span {
-      font-family: var(--display);
-      font-size: clamp(20px, 3vw, 28px);
-      font-weight: 700;
-      text-transform: uppercase;
       color: var(--white);
-      letter-spacing: 0.5px;
+      font-family: var(--body);
+      font-size: 16px;
+      font-weight: 600;
+      text-align: left;
+      padding: 22px 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      line-height: 1.4;
     }
     .faq-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 20px;
+      font-size: 22px;
       color: var(--orange);
-      transition: transform 0.3s ease, background 0.3s ease;
+      flex-shrink: 0;
+      font-weight: 300;
+      line-height: 1;
+      transition: transform 0.3s ease;
     }
-    .faq-item.open .faq-icon {
-      transform: rotate(45deg);
-      background: rgba(255,98,0,0.1);
-    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
     .faq-a {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s cubic-bezier(0.22,1,0.36,1);
+      transition: max-height 0.35s ease;
     }
-    .faq-item.open .faq-a {
-      max-height: 300px;
-    }
+    .faq-item.open .faq-a { max-height: 400px; }
     .faq-a-inner {
-      padding: 0 0 28px;
-      font-size: 17px;
-      color: #666;
+      padding-bottom: 24px;
+      color: var(--gray);
+      font-size: 15px;
       line-height: 1.75;
     }
-    .faq-a-inner strong { color: #aaa; font-weight: 600; }
+    .faq-a-inner strong { color: var(--white); }
 
-
-    /* ══════════════════════════════════════════
-       FINAL CTA
-    ══════════════════════════════════════════ */
-    .final-cta {
-      text-align: center;
-      padding: 120px 0;
-      position: relative;
-      overflow: hidden;
-    }
-    .final-cta::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(255,98,0,0.07) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .final-cta-headline {
-      font-family: var(--display);
-      font-size: clamp(48px, 8vw, 100px);
-      font-weight: 900;
-      text-transform: uppercase;
-      line-height: 1.0;
-      margin-bottom: 28px;
-      position: relative;
-    }
-    .final-cta p {
-      font-size: 19px;
-      color: #555;
-      margin-bottom: 52px;
-      position: relative;
-    }
-    .final-cta .btn { position: relative; }
-    .final-note {
-      margin-top: 24px;
-      font-size: 13px;
-      color: #333;
-      position: relative;
-    }
-
-
-    /* ══════════════════════════════════════════
+    /* ─────────────────────────────────────────
        FOOTER
-    ══════════════════════════════════════════ */
+    ───────────────────────────────────────── */
     footer {
-      padding: 40px 0;
+      padding: 36px 0;
       border-top: 1px solid var(--border);
     }
     .footer-inner {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
+      gap: 10px;
+      text-align: center;
+    }
+    @media (min-width: 600px) {
+      .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
     }
     .footer-logo {
       font-family: var(--display);
-      font-size: 16px;
-      font-weight: 800;
-      letter-spacing: 4px;
+      font-weight: 900;
+      font-size: 18px;
       text-transform: uppercase;
-      color: #333;
+      letter-spacing: 1px;
+      color: var(--white);
     }
+    .footer-logo span { color: var(--orange); }
     .footer-copy {
       font-size: 12px;
-      color: #2e2e2e;
-      letter-spacing: 1px;
+      color: var(--dim);
     }
-
-
-    /* ══════════════════════════════════════════
-       MOBILE TWEAKS
-    ══════════════════════════════════════════ */
-    @media (max-width: 768px) {
-      .btn { font-size: 18px; padding: 17px 36px; }
-      .hero-actions { flex-direction: column; align-items: flex-start; }
-    }
-    @media (max-width: 480px) {
-      .wrap { padding: 0 18px; }
-    }
-
   </style>
 </head>
 <body>
 
-<script>
-  function openModal() {
-    var m = document.getElementById('modal-overlay');
-    if (m) { m.classList.add('open'); document.body.style.overflow = 'hidden'; }
-  }
-  function closeModal() {
-    var m = document.getElementById('modal-overlay');
-    if (m) { m.classList.remove('open'); document.body.style.overflow = ''; }
-  }
-  function handleOverlayClick(e) {
-    if (e.target && e.target.id === 'modal-overlay') closeModal();
-  }
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeModal();
-  });
-</script>
 
-<!-- ══════════════════════════════════════════
-     HERO
-══════════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════════════
+     HERO — Headline + subheadline + GHL form inline
+═══════════════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-glow"></div>
   <div class="wrap">
     <div class="hero-inner">
 
-      <div class="hero-pre">
-        <div class="hero-pre-dot"></div>
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
         <span class="label" style="color:#444;">Per coach · consulenti · nutrizionisti · psicologi</span>
       </div>
 
@@ -1106,107 +671,102 @@
         Non ti diamo solo un sistema, ti diamo le fondamenta reali per monetizzare e scalare la tua professione. Lo costruiamo noi, da zero, e ti accompagniamo mentre lo fai crescere. Quello che le altre agenzie non ti hanno mai dato.
       </p>
 
-      <div class="hero-actions">
-        <button type="button" class="btn btn-primary js-open-modal">Prenota una call gratuita →</button>
-        <span class="hero-note">Selezioniamo massimo 3 nuovi clienti al mese.</span>
+      <div class="hero-form-wrap" id="form-top">
+        <div class="ghl-wrap">
+          <iframe
+            src="https://link.shardanaconsulting.com/widget/form/QArwgVMPlTORYIWEadjA"
+            style="width:100%;height:993px;border:none;border-radius:3px"
+            id="ghl-top"
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="Landing Esperti Italia"
+            data-height="993"
+            data-layout-iframe-id="ghl-top"
+            data-form-id="QArwgVMPlTORYIWEadjA"
+            title="Landing Esperti Italia">
+          </iframe>
+        </div>
+        <p class="hero-form-note">Selezioniamo max 3 nuovi clienti al mese · Posti limitati</p>
       </div>
 
     </div>
   </div>
-
-  <div class="hero-scroll-hint">
-    <span>Scorri</span>
-    <div class="scroll-line"></div>
-  </div>
 </section>
 
 
-<!-- ══════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════
      PROOF BAR
-══════════════════════════════════════════ -->
+═══════════════════════════════════════════════ -->
 <div class="proof-bar">
   <div class="wrap">
     <div class="proof-inner">
       <div class="proof-stat reveal">
         <div class="proof-number">487%</div>
-        <div class="proof-desc">ROI medio clienti</div>
+        <div class="proof-label">ROI medio clienti</div>
       </div>
       <div class="proof-sep"></div>
-      <div class="proof-stat reveal reveal-delay-1">
+      <div class="proof-stat reveal d1">
         <div class="proof-number">30gg</div>
-        <div class="proof-desc">Sistema live</div>
+        <div class="proof-label">Sistema live</div>
       </div>
       <div class="proof-sep"></div>
-      <div class="proof-stat reveal reveal-delay-2">
+      <div class="proof-stat reveal d2">
         <div class="proof-number">3M+</div>
-        <div class="proof-desc">Revenue generata</div>
+        <div class="proof-label">Revenue generata</div>
       </div>
       <div class="proof-sep"></div>
-      <div class="proof-stat reveal reveal-delay-3">
+      <div class="proof-stat reveal d3">
         <div class="proof-number">100%</div>
-        <div class="proof-desc">Done for you</div>
+        <div class="proof-label">Done for you</div>
       </div>
     </div>
   </div>
 </div>
 
 
-<!-- ══════════════════════════════════════════
-     PAIN — "Riconosci questo?"
-══════════════════════════════════════════ -->
-<section id="pain">
+<!-- ═══════════════════════════════════════════════
+     PAIN — Il problema che tutti hanno
+═══════════════════════════════════════════════ -->
+<section>
   <div class="wrap">
 
     <div class="pain-header">
-      <span class="label reveal">Il problema che riconosci</span>
-      <h2 class="section-title reveal reveal-delay-1">
-        Almeno una di queste<br>frasi ti fa male.
+      <span class="label reveal">Il problema reale</span>
+      <h2 class="section-title reveal d1">
+        Ti riconosci<br><span class="orange">in almeno una?</span>
       </h2>
     </div>
 
-    <div class="pain-grid">
+    <div class="pain-cards">
 
-      <div class="pain-card reveal reveal-delay-1">
+      <div class="pain-card reveal d1">
         <div class="pain-card-quote">"</div>
-        <div class="pain-card-icon">📉</div>
-        <p><strong>Non ho un piano strutturato.</strong> Voglio migliorare — creare piano, strategia e attuazione — ma non so da dove iniziare.</p>
+        <div class="pain-card-icon">🧱</div>
+        <p><strong>Sono fermo.</strong> In questo momento non ho una strategia nemmeno sui contenuti da pubblicare. Manca proprio il metodo di acquisizione.</p>
       </div>
 
-      <div class="pain-card reveal reveal-delay-2">
-        <div class="pain-card-quote">"</div>
-        <div class="pain-card-icon">🌐</div>
-        <p><strong>So fare il mio lavoro</strong>, ma non so come vendermi sul web. Non capisco cosa pubblicare, quando, e come convertire.</p>
-      </div>
-
-      <div class="pain-card reveal reveal-delay-3">
-        <div class="pain-card-quote">"</div>
-        <div class="pain-card-icon">⏳</div>
-        <p><strong>Non ho tempo da dedicare ai social.</strong> Vorrei un team che mi indirizza esattamente sul da farsi — contenuti, gestione, tutto.</p>
-      </div>
-
-      <div class="pain-card reveal reveal-delay-1">
-        <div class="pain-card-quote">"</div>
-        <div class="pain-card-icon">🔇</div>
-        <p><strong>Sono fermo.</strong> In questo momento non ho una strategia nemmeno sui contenuti da pubblicare. <strong>Manca proprio il metodo di acquisizione.</strong></p>
-      </div>
-
-      <div class="pain-card reveal reveal-delay-2">
+      <div class="pain-card reveal d2">
         <div class="pain-card-quote">"</div>
         <div class="pain-card-icon">🎯</div>
         <p><strong>Voglio un flusso costante di clienti,</strong> sia online che in presenza. Ma non ho un sistema che lo renda prevedibile.</p>
       </div>
 
-      <div class="pain-card reveal reveal-delay-3">
+      <div class="pain-card reveal d3">
         <div class="pain-card-quote">"</div>
         <div class="pain-card-icon">📊</div>
-        <p><strong>Mi devo promuovere</strong>, ma il mio metodo di acquisizione è debole o quasi assente. I clienti arrivano per caso, non per sistema.</p>
+        <p><strong>Mi devo promuovere,</strong> ma il mio metodo di acquisizione è debole o quasi assente. I clienti arrivano per caso, non per sistema.</p>
       </div>
 
     </div>
 
-    <div class="pain-cta-row reveal">
-      <p>Se ti riconosci anche solo in una di queste, <strong>non è un problema di competenze o motivazione.</strong></p>
-      <button type="button" class="btn btn-primary js-open-modal">Risolviamolo insieme →</button>
+    <div class="pain-cta reveal">
+      <p>Se ti riconosci anche solo in una di queste, <strong>non è un problema di competenze o di motivazione.</strong></p>
+      <a href="#form-bottom" class="btn btn-primary btn-full">Risolviamolo insieme →</a>
     </div>
 
   </div>
@@ -1216,10 +776,10 @@
 <div class="h-line"></div>
 
 
-<!-- ══════════════════════════════════════════
-     REFRAME — "Non è colpa tua."
-══════════════════════════════════════════ -->
-<section class="reframe" id="problema">
+<!-- ═══════════════════════════════════════════════
+     REFRAME — Non è colpa tua
+═══════════════════════════════════════════════ -->
+<section class="reframe">
   <div class="wrap">
     <div class="reframe-inner">
 
@@ -1231,28 +791,24 @@
         </div>
       </div>
 
-      <div class="reframe-body reveal reveal-delay-2">
-        <div class="orange-dash" style="margin-bottom:28px;"></div>
-        <p>
-          Il problema non è la motivazione. Non è il tempo. Non è che non sei abbastanza bravo nel tuo settore.
-        </p>
-        <p>
-          <strong>Il problema è strutturale.</strong> Nessuno ti ha mai costruito un sistema di acquisizione. E senza sistema, i risultati dipendono dalla fortuna.
-        </p>
+      <div class="reveal d2">
+        <div class="orange-bar" style="margin-bottom:28px;"></div>
+        <div class="reframe-body">
+          <p>Il problema non è la motivazione. Non è il tempo. Non è che non sei abbastanza bravo nel tuo settore.</p>
+          <p><strong>Il problema è strutturale.</strong> Nessuno ti ha mai costruito un sistema di acquisizione. E senza sistema, i risultati dipendono dalla fortuna.</p>
 
-        <div class="reframe-chain">
-          <div class="chain-step">Nessun funnel</div>
-          <div class="chain-arrow">↓</div>
-          <div class="chain-step">Nessun lead qualificato</div>
-          <div class="chain-arrow">↓</div>
-          <div class="chain-step">Nessun cliente costante</div>
-          <div class="chain-arrow">↓</div>
-          <div class="chain-step orange">Fatturato imprevedibile.</div>
+          <div class="chain">
+            <div class="chain-step">Nessun funnel</div>
+            <div class="chain-arrow">↓</div>
+            <div class="chain-step">Nessun lead qualificato</div>
+            <div class="chain-arrow">↓</div>
+            <div class="chain-step">Nessun cliente costante</div>
+            <div class="chain-arrow">↓</div>
+            <div class="chain-step end">Fatturato imprevedibile.</div>
+          </div>
+
+          <p>Puoi continuare a improvvisare — oppure far costruire il sistema a chi lo fa di mestiere.</p>
         </div>
-
-        <p>
-          Puoi continuare a improvvisare — oppure far costruire il sistema a chi lo fa di mestiere.
-        </p>
       </div>
 
     </div>
@@ -1260,68 +816,71 @@
 </section>
 
 
-<!-- ══════════════════════════════════════════
-     SOLUTION — "Cosa costruiamo per te"
-══════════════════════════════════════════ -->
-<section id="cosa-facciamo">
+<div class="h-line"></div>
+
+
+<!-- ═══════════════════════════════════════════════
+     BENEFITS — Cosa costruiamo per te
+═══════════════════════════════════════════════ -->
+<section>
   <div class="wrap">
 
-    <div class="solution-header">
+    <div class="benefits-header">
       <span class="label reveal">La soluzione</span>
-      <h2 class="section-title reveal reveal-delay-1">
-        Non solo un sistema.<br>
-        <span class="orange">Un ecosistema completo.</span>
+      <h2 class="section-title reveal d1">
+        Quello che<br><span class="orange">costruiamo per te.</span>
       </h2>
-      <p class="reveal reveal-delay-2">
-        Non un corso, non consigli generici, non un template da compilare da soli. Costruiamo noi le fondamenta reali per monetizzare e scalare la tua professione — e non ti lasciamo solo dopo la consegna.
-      </p>
     </div>
 
     <div class="benefits-grid">
 
-      <div class="benefit-card reveal reveal-delay-1">
+      <div class="benefit-card reveal d1">
         <div class="benefit-num">01</div>
         <div class="benefit-icon">⚡</div>
         <div class="benefit-title">Funnel ad alta conversione</div>
-        <p class="benefit-desc">Una macchina di acquisizione che trasforma i visitatori in clienti qualificati. Costruita su misura per il tuo servizio e il tuo mercato.</p>
+        <p class="benefit-desc">Una macchina progettata per trasformare visitatori freddi in lead qualificati e clienti paganti. Ogni elemento testato e ottimizzato.</p>
       </div>
 
-      <div class="benefit-card reveal reveal-delay-2">
+      <div class="benefit-card reveal d2">
         <div class="benefit-num">02</div>
-        <div class="benefit-icon">🎯</div>
+        <div class="benefit-icon">📱</div>
         <div class="benefit-title">Profilo social ottimizzato</div>
-        <p class="benefit-desc">Bio, visual, link, positioning. Ogni elemento del profilo trasformato in uno strumento di vendita che lavora 24 ore su 24.</p>
+        <p class="benefit-desc">Bio, visual, link in bio e strategia di contenuto allineati al tuo posizionamento. Un profilo che converte chi ti visita per la prima volta.</p>
       </div>
 
-      <div class="benefit-card reveal reveal-delay-3">
+      <div class="benefit-card reveal d3">
         <div class="benefit-num">03</div>
-        <div class="benefit-icon">✉️</div>
-        <div class="benefit-title">Email automation</div>
-        <p class="benefit-desc">Sequenze automatiche che qualificano i lead e li accompagnano alla conversione. Nessuna azione manuale da parte tua.</p>
-      </div>
-
-      <div class="benefit-card reveal reveal-delay-1">
-        <div class="benefit-num">04</div>
         <div class="benefit-icon">📅</div>
-        <div class="benefit-title">30 giorni di contenuti</div>
-        <p class="benefit-desc">Un piano editoriale personalizzato e completo — temi, format, copy — pronto all'uso dal primo giorno. Pensato per acquisire, non solo per pubblicare.</p>
+        <div class="benefit-title">Calendario editoriale 30gg</div>
+        <p class="benefit-desc">30 giorni di contenuti personalizzati, pronti da pubblicare. Non devi pensare a cosa postare — ci pensiamo noi.</p>
       </div>
 
-      <div class="benefit-card reveal reveal-delay-2">
+      <div class="benefit-card reveal d1">
+        <div class="benefit-num">04</div>
+        <div class="benefit-icon">🗺️</div>
+        <div class="benefit-title">Strategia di crescita</div>
+        <p class="benefit-desc">Un piano chiaro: dove sei adesso, dove vuoi arrivare e come ci arriviamo insieme. Niente improvvisazione, solo azioni misurabili.</p>
+      </div>
+
+      <div class="benefit-card reveal d2">
         <div class="benefit-num">05</div>
         <div class="benefit-icon">🤖</div>
         <div class="benefit-title">Automazioni CRM</div>
         <p class="benefit-desc">Il sistema gestisce i lead in entrata, li segmenta e ti avvisa quando è il momento di intervenire. Zero lead persi per strada.</p>
       </div>
 
-      <div class="benefit-card reveal reveal-delay-3" style="background:rgba(255,98,0,0.04);border-color:rgba(255,98,0,0.15);display:flex;flex-direction:column;justify-content:center;text-align:center;gap:20px;">
-        <div style="font-family:var(--display);font-size:22px;font-weight:900;text-transform:uppercase;color:#444;">E poi?</div>
-        <div style="font-family:var(--display);font-size:34px;font-weight:900;text-transform:uppercase;color:var(--orange);line-height:1.1;">Ti accompagniamo mentre il business cresce.</div>
-        <div style="font-size:15px;color:#555;line-height:1.6;">Non ti consegniamo un sistema e sparisce. Siamo lì per ottimizzarlo, farlo scalare e adattarlo con te.</div>
-        <button type="button" class="btn btn-primary js-open-modal" style="margin-top:8px;">Inizia ora →</button>
+      <div class="benefit-card highlight reveal d3">
+        <div class="highlight-sub">E poi?</div>
+        <div class="highlight-main">Ti accompagniamo mentre il business cresce.</div>
+        <div class="highlight-desc">Non ti consegniamo un sistema e sparisce. Siamo lì per ottimizzarlo, farlo scalare e adattarlo con te.</div>
       </div>
 
     </div>
+
+    <div class="benefits-cta reveal">
+      <a href="#form-bottom" class="btn btn-primary">Voglio il mio sistema →</a>
+    </div>
+
   </div>
 </section>
 
@@ -1329,160 +888,118 @@
 <div class="h-line"></div>
 
 
-<!-- ══════════════════════════════════════════
-     PROCESS — "Come funziona"
-══════════════════════════════════════════ -->
-<section class="process" id="come-funziona">
+<!-- ═══════════════════════════════════════════════
+     PROCESS — Come funziona
+═══════════════════════════════════════════════ -->
+<section>
   <div class="wrap">
 
     <div class="process-header">
       <span class="label reveal">Il processo</span>
-      <h2 class="section-title reveal reveal-delay-1">
+      <h2 class="section-title reveal d1">
         Come funziona.<br><span class="orange">Dall'inizio alla crescita.</span>
       </h2>
     </div>
 
     <div class="steps">
 
-      <div class="step reveal reveal-delay-1">
+      <div class="step reveal d1">
         <div class="step-num">01</div>
         <div class="step-body">
-          <div class="step-badge">Gratuita · 30 min</div>
+          <span class="step-badge">Gratuita · 30 min</span>
           <div class="step-title">Call di scoperta</div>
           <p class="step-desc">Parliamo del tuo business, degli obiettivi e di cosa non sta funzionando. Nessun impegno — valutiamo insieme se possiamo davvero aiutarti.</p>
         </div>
       </div>
 
-      <div class="step reveal reveal-delay-2">
+      <div class="step reveal d2">
         <div class="step-num">02</div>
         <div class="step-body">
-          <div class="step-badge">4–6 settimane</div>
-          <div class="step-title">Costruiamo il sistema</div>
-          <p class="step-desc">Il nostro team costruisce l'intero ecosistema digitale — funnel, profilo, automazioni, contenuti. Tu continui a lavorare. Noi costruiamo.</p>
+          <span class="step-badge">1 settimana</span>
+          <div class="step-title">Briefing e strategia</div>
+          <p class="step-desc">Raccogliamo tutto ciò che serve: il tuo posizionamento, il target, gli obiettivi. Costruiamo il piano su misura per te.</p>
         </div>
       </div>
 
-      <div class="step reveal reveal-delay-3">
+      <div class="step reveal d3">
         <div class="step-num">03</div>
         <div class="step-body">
-          <div class="step-badge">Dai 30 giorni</div>
-          <div class="step-title">Cresci, ti accompagniamo</div>
-          <p class="step-desc">Il sistema è live. Lead in entrata, contenuti pubblicati, automazioni attive. E noi restiamo — per ottimizzare, scalare e accompagnarti mentre il tuo business cresce davvero.</p>
+          <span class="step-badge">4–6 settimane</span>
+          <div class="step-title">Costruiamo il sistema</div>
+          <p class="step-desc">Il nostro team costruisce l'intero ecosistema digitale: funnel, profilo, automazioni, contenuti. Tu continui a lavorare. Noi costruiamo.</p>
+        </div>
+      </div>
+
+      <div class="step reveal d4">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <span class="step-badge">Ongoing</span>
+          <div class="step-title">Launch e crescita</div>
+          <p class="step-desc">Il sistema va live. Ti affianchiamo nell'ottimizzazione continua, nei contenuti e nella crescita. Non sei solo: siamo il tuo team.</p>
         </div>
       </div>
 
     </div>
 
+    <div class="process-cta reveal">
+      <a href="#form-bottom" class="btn btn-primary">Inizia adesso →</a>
+    </div>
+
   </div>
 </section>
 
 
-<!-- ══════════════════════════════════════════
-     FOR WHO — "È per te se..."
-══════════════════════════════════════════ -->
-<section id="per-chi">
+<!-- ═══════════════════════════════════════════════
+     BOTTOM FORM — GHL embed
+═══════════════════════════════════════════════ -->
+<section class="form-section" id="form-bottom">
   <div class="wrap">
+    <div class="form-inner">
 
-    <div style="text-align:center;margin-bottom:64px;">
-      <span class="label reveal" style="display:block;margin-bottom:20px;">Chi selezioniamo</span>
-      <h2 class="section-title reveal reveal-delay-1">Per chi è,<br><span class="orange">per chi non è.</span></h2>
-    </div>
+      <span class="label reveal" style="display:block;margin-bottom:16px;">Inizia adesso</span>
+      <h2 class="section-title reveal d1">
+        Prenota la tua<br><span class="orange">call gratuita.</span>
+      </h2>
+      <p class="form-sub reveal d2">
+        30 minuti. Nessun impegno. Ti diciamo onestamente se possiamo aiutarti e come.
+      </p>
 
-    <div class="forwho-inner">
-
-      <div class="forwho-block yes reveal reveal-delay-1">
-        <div class="forwho-title">È per te se...</div>
-        <ul class="forwho-list">
-          <li>
-            <span class="check">✓</span>
-            <span>Sei <strong>coach, consulente, nutrizionista, psicologo</strong> o libero professionista — anche se stai partendo da zero</span>
-          </li>
-          <li>
-            <span class="check">✓</span>
-            <span>Hai competenze solide ma <strong>non sai come monetizzarle online</strong> o non hai ancora un sistema per farlo</span>
-          </li>
-          <li>
-            <span class="check">✓</span>
-            <span>Vuoi <strong>costruire le basi giuste fin dall'inizio</strong> — non rattoppare qualcosa che non funziona</span>
-          </li>
-          <li>
-            <span class="check">✓</span>
-            <span>Cerchi qualcuno che <strong>faccia il lavoro con te</strong>, non solo che ti dica cosa fare</span>
-          </li>
-          <li>
-            <span class="check">✓</span>
-            <span>Capisci che crescere richiede un investimento e <strong>sei pronto a farlo sul serio</strong></span>
-          </li>
-        </ul>
+      <div class="ghl-wrap reveal d3" id="ghl-bottom-wrap">
+        <iframe
+          src="https://link.shardanaconsulting.com/widget/form/QArwgVMPlTORYIWEadjA"
+          style="width:100%;height:993px;border:none;border-radius:3px"
+          id="ghl-bottom"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="Landing Esperti Italia"
+          data-height="993"
+          data-layout-iframe-id="ghl-bottom"
+          data-form-id="QArwgVMPlTORYIWEadjA"
+          title="Landing Esperti Italia">
+        </iframe>
       </div>
 
-      <div class="forwho-block no reveal reveal-delay-2">
-        <div class="forwho-title">Non è per te se...</div>
-        <ul class="forwho-list">
-          <li>
-            <span class="cross">✗</span>
-            <span>Cerchi <strong>soluzioni gratis</strong> o non sei disposto a investire nel tuo business</span>
-          </li>
-          <li>
-            <span class="cross">✗</span>
-            <span>Vuoi solo <strong>consigli, formazione o un corso</strong> — non qualcuno che costruisca e lavori con te</span>
-          </li>
-          <li>
-            <span class="cross">✗</span>
-            <span>Non hai ancora <strong>chiarezza su cosa fai</strong> e per chi — non abbiamo niente su cui costruire</span>
-          </li>
-          <li>
-            <span class="cross">✗</span>
-            <span>Stai cercando <strong>risultati overnight</strong> senza voler costruire qualcosa di solido</span>
-          </li>
-        </ul>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-
-<div class="h-line"></div>
-
-
-<!-- ══════════════════════════════════════════
-     FORM — Lead capture
-══════════════════════════════════════════ -->
-<section class="form-section" id="contatto">
-  <div class="wrap">
-    <div class="form-wrapper">
-
-      <div class="form-header">
-        <span class="label reveal" style="display:block;margin-bottom:20px;">Inizia adesso</span>
-        <h2 class="section-title reveal reveal-delay-1">
-          Prenota la tua<br><span class="orange">call gratuita.</span>
-        </h2>
-        <p class="reveal reveal-delay-2">
-          30 minuti. Nessun impegno. Ti diciamo onestamente se possiamo aiutarti — e come.
-        </p>
-      </div>
-
-      <div class="reveal reveal-delay-2" style="margin-top:40px;text-align:center;">
-        <button type="button" class="btn btn-primary js-open-modal">Prenota la call gratuita →</button>
-        <p style="margin-top:16px;font-size:13px;color:#555;">Nessuno spam. Ti contattiamo entro 24 ore.</p>
-      </div>
+      <p class="form-note reveal">Nessuno spam · Nessuna newsletter · Risposta entro 24 ore</p>
 
     </div>
   </div>
 </section>
 
 
-<!-- ══════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════
      FAQ
-══════════════════════════════════════════ -->
-<section id="faq">
+═══════════════════════════════════════════════ -->
+<section class="faq-section">
   <div class="wrap">
 
     <div class="faq-header">
-      <span class="label reveal" style="display:block;margin-bottom:20px;">Domande frequenti</span>
-      <h2 class="section-title reveal reveal-delay-1">Le domande<br><span class="orange">che stai pensando.</span></h2>
+      <span class="label reveal">Domande frequenti</span>
+      <h2 class="section-title reveal d1">Le domande<br><span class="orange">che stai pensando.</span></h2>
     </div>
 
     <div class="faq-list">
@@ -1499,7 +1016,7 @@
         </div>
       </div>
 
-      <div class="faq-item reveal reveal-delay-1">
+      <div class="faq-item reveal d1">
         <button class="faq-q" onclick="toggleFaq(this)">
           <span>Quanto tempo prima di vedere i primi risultati?</span>
           <div class="faq-icon">+</div>
@@ -1511,38 +1028,38 @@
         </div>
       </div>
 
-      <div class="faq-item reveal reveal-delay-2">
+      <div class="faq-item reveal d2">
         <button class="faq-q" onclick="toggleFaq(this)">
-          <span>Funziona per il mio settore specifico?</span>
+          <span>Devo avere già un'attività avviata?</span>
           <div class="faq-icon">+</div>
         </button>
         <div class="faq-a">
           <div class="faq-a-inner">
-            Lavoriamo con professionisti in ambiti molto diversi: coaching, consulenza, nutrizione, psicologia, formazione, legal, finance. <strong>Se hai un servizio definito e clienti già acquisiti</strong> (anche in numero limitato), il sistema funziona. L'unico modo per saperlo con certezza è la call — dove ti diciamo onestamente se siamo in grado di aiutarti.
+            No. Lavoriamo sia con professionisti già operativi che vogliono strutturarsi, sia con chi sta partendo da zero. L'unico requisito è avere una professione reale e la determinazione a costruire qualcosa di serio. Se stai cercando una soluzione rapida senza impegno, non siamo i partner giusti per te.
           </div>
         </div>
       </div>
 
-      <div class="faq-item reveal reveal-delay-3">
+      <div class="faq-item reveal d3">
         <button class="faq-q" onclick="toggleFaq(this)">
-          <span>Devo occuparmi di qualcosa io?</span>
+          <span>Cosa succede dopo il setup iniziale?</span>
           <div class="faq-icon">+</div>
         </button>
         <div class="faq-a">
           <div class="faq-a-inner">
-            Il tuo unico impegno è la <strong>call di scoperta</strong> (30 minuti) e un <strong>briefing iniziale</strong> dove ci racconti il tuo business. Tutto il resto — funnel, profilo, automazioni, contenuti — lo costruiamo noi. Il concetto è semplice: tu fai il tuo lavoro, noi costruiamo il sistema che porta i clienti.
+            Non ti consegniamo un sistema e sparisce. Ti affianchiamo nella crescita: ottimizzazione del funnel, aggiornamento dei contenuti, scaling delle campagne, reportistica mensile. Siamo il tuo team di marketing esterno. Puoi scegliere di lavorare con noi in modo continuativo o su singoli progetti.
           </div>
         </div>
       </div>
 
-      <div class="faq-item reveal">
+      <div class="faq-item reveal d4">
         <button class="faq-q" onclick="toggleFaq(this)">
-          <span>Dopo il setup mi lasciate soli?</span>
+          <span>Come funziona la call gratuita?</span>
           <div class="faq-icon">+</div>
         </button>
         <div class="faq-a">
           <div class="faq-a-inner">
-            No. Costruire il sistema è il punto di partenza, non il punto di arrivo. <strong>Ti accompagniamo mentre cresce</strong> — ottimizzando il funnel, scalando le ads, gestendo i social, affinando la strategia. Il livello di supporto dipende da quello che decidiamo insieme in call. L'obiettivo è uno solo: che il tuo business cresca in modo reale e misurabile, non che tu rimanga bloccato dopo la prima consegna.
+            Compila il form qui sopra. Ti contattiamo entro 24 ore per fissare una call di 30 minuti su Zoom. Parliamo del tuo business, degli obiettivi e di cosa non sta funzionando. <strong>Nessun impegno, nessuna pressione.</strong> Se non siamo i partner giusti per te, te lo diciamo onestamente. Selezioniamo massimo 3 nuovi clienti al mese — posta la tua candidatura adesso.
           </div>
         </div>
       </div>
@@ -1553,118 +1070,52 @@
 </section>
 
 
-<!-- ══════════════════════════════════════════
-     FINAL CTA
-══════════════════════════════════════════ -->
-<section class="final-cta">
-  <div class="wrap">
-    <h2 class="final-cta-headline reveal">
-      Costruiamo insieme.<br>
-      <span class="orange">Per davvero.</span>
-    </h2>
-    <p class="reveal reveal-delay-1">Non ti diamo un sistema e sparisce. Ti accompagniamo mentre il tuo business cresce. La call è gratuita, senza impegno.</p>
-    <button type="button" class="btn btn-primary js-open-modal reveal reveal-delay-2">Prenota la tua call →</button>
-    <p class="final-note reveal reveal-delay-3">Selezioniamo max 3 nuovi clienti al mese · Posti limitati</p>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════
      FOOTER
-══════════════════════════════════════════ -->
+═══════════════════════════════════════════════ -->
 <footer>
   <div class="wrap">
     <div class="footer-inner">
-      <div class="footer-logo">Shardana Consulting</div>
-      <div class="footer-copy">© 2026 Shardana Consulting. Tutti i diritti riservati.</div>
+      <div class="footer-logo">Shardana<span>.</span></div>
+      <div class="footer-copy">© 2026 Shardana Consulting · Tutti i diritti riservati</div>
     </div>
   </div>
 </footer>
 
 
-<!-- ══════════════════════════════════════════
-     POPUP MODAL
-══════════════════════════════════════════ -->
-<div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
-  <div class="modal-box">
-    <button type="button" class="modal-close js-close-modal" aria-label="Chiudi">✕</button>
-    <iframe src="https://link.shardanaconsulting.com/widget/form/QArwgVMPlTORYIWEadjA"
-            style="width:100%;height:100%;border:none;border-radius:3px"
-            id="inline-QArwgVMPlTORYIWEadjA-modal"
-            data-layout="{'id':'INLINE'}"
-            data-trigger-type="alwaysShow"
-            data-trigger-value=""
-            data-activation-type="alwaysActivated"
-            data-activation-value=""
-            data-deactivation-type="neverDeactivate"
-            data-deactivation-value=""
-            data-form-name="Landing Esperti Italia"
-            data-height="993"
-            data-layout-iframe-id="inline-QArwgVMPlTORYIWEadjA-modal"
-            data-form-id="QArwgVMPlTORYIWEadjA"
-            title="Landing Esperti Italia">
-    </iframe>
-  </div>
-</div>
+<script src="https://link.shardanaconsulting.com/js/form_embed.js"></script>
 
 <script>
-  /* ══════════════════════════════════════════
-     BUTTON BINDING — event delegation
-  ══════════════════════════════════════════ */
-  document.addEventListener('click', function(e) {
-    var t = e.target;
-    // Walk up in case click hits a child node (text, span)
-    while (t && t !== document) {
-      if (t.classList && t.classList.contains('js-open-modal')) { openModal(); return; }
-      if (t.classList && t.classList.contains('js-close-modal')) { closeModal(); return; }
-      if (t.id === 'modal-overlay') { closeModal(); return; }
-      t = t.parentNode;
-    }
-  }, true); // capture phase — fires before any GHL listener
-
-  /* ══════════════════════════════════════════
-     SCROLL REVEAL — Intersection Observer
-  ══════════════════════════════════════════ */
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          revealObserver.unobserve(e.target);
-        }
-      });
-    },
-    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-  );
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-  /* ══════════════════════════════════════════
-     FAQ accordion
-  ══════════════════════════════════════════ */
+  /* ─── FAQ accordion ─── */
   function toggleFaq(btn) {
-    const item = btn.closest('.faq-item');
-    const isOpen = item.classList.contains('open');
-    // Close all
-    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-    // Toggle current
+    var item = btn.closest('.faq-item');
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(i) { i.classList.remove('open'); });
     if (!isOpen) item.classList.add('open');
   }
 
-  /* ══════════════════════════════════════════
-     Smooth scroll for anchor links
-  ══════════════════════════════════════════ */
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      const target = document.querySelector(a.getAttribute('href'));
+  /* ─── Scroll reveal ─── */
+  var revealObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el) { revealObs.observe(el); });
+
+  /* ─── Smooth scroll for anchor CTAs ─── */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var target = document.querySelector(a.getAttribute('href'));
       if (target) {
-        const offset = 80;
-        const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   });
 </script>
-<script src="https://link.shardanaconsulting.com/js/form_embed.js"></script>
+
 </body>
 </html>
