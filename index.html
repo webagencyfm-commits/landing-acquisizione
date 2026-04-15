@@ -198,7 +198,7 @@
       inset: 0;
       background: rgba(0,0,0,0.88);
       backdrop-filter: blur(8px);
-      z-index: 999;
+      z-index: 99999;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1060,6 +1060,23 @@
 </head>
 <body>
 
+<script>
+  function openModal() {
+    var m = document.getElementById('modal-overlay');
+    if (m) { m.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  }
+  function closeModal() {
+    var m = document.getElementById('modal-overlay');
+    if (m) { m.classList.remove('open'); document.body.style.overflow = ''; }
+  }
+  function handleOverlayClick(e) {
+    if (e.target && e.target.id === 'modal-overlay') closeModal();
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+</script>
+
 <!-- ══════════════════════════════════════════
      HERO
 ══════════════════════════════════════════ -->
@@ -1200,7 +1217,7 @@
 
     <div class="pain-cta-row reveal">
       <p>Se ti riconosci anche solo in una di queste, <strong>non è un problema di competenze o motivazione.</strong></p>
-      <button class="btn btn-primary" onclick="openModal()">Risolviamolo insieme →</button>
+      <button type="button" class="btn btn-primary js-open-modal">Risolviamolo insieme →</button>
     </div>
 
   </div>
@@ -1312,7 +1329,7 @@
         <div style="font-family:var(--display);font-size:22px;font-weight:900;text-transform:uppercase;color:#444;">E poi?</div>
         <div style="font-family:var(--display);font-size:34px;font-weight:900;text-transform:uppercase;color:var(--orange);line-height:1.1;">Ti accompagniamo mentre il business cresce.</div>
         <div style="font-size:15px;color:#555;line-height:1.6;">Non ti consegniamo un sistema e sparisce. Siamo lì per ottimizzarlo, farlo scalare e adattarlo con te.</div>
-        <button class="btn btn-primary" style="margin-top:8px;" onclick="openModal()">Inizia ora →</button>
+        <button type="button" class="btn btn-primary js-open-modal" style="margin-top:8px;">Inizia ora →</button>
       </div>
 
     </div>
@@ -1571,7 +1588,7 @@
       <span class="orange">Per davvero.</span>
     </h2>
     <p class="reveal reveal-delay-1">Non ti diamo un sistema e sparisce. Ti accompagniamo mentre il tuo business cresce. La call è gratuita, senza impegno.</p>
-    <button class="btn btn-primary reveal reveal-delay-2" onclick="openModal()">Prenota la tua call →</button>
+    <button type="button" class="btn btn-primary js-open-modal reveal reveal-delay-2">Prenota la tua call →</button>
     <p class="final-note reveal reveal-delay-3">Selezioniamo max 3 nuovi clienti al mese · Posti limitati</p>
   </div>
 </section>
@@ -1595,7 +1612,7 @@
 ══════════════════════════════════════════ -->
 <div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeModal()" aria-label="Chiudi">✕</button>
+    <button type="button" class="modal-close js-close-modal" aria-label="Chiudi">✕</button>
     <iframe src="https://link.shardanaconsulting.com/widget/form/QArwgVMPlTORYIWEadjA"
             style="width:100%;height:100%;border:none;border-radius:3px"
             id="inline-QArwgVMPlTORYIWEadjA-modal"
@@ -1615,26 +1632,20 @@
   </div>
 </div>
 
-<script src="https://link.shardanaconsulting.com/js/form_embed.js"></script>
-
 <script>
   /* ══════════════════════════════════════════
-     MODAL
+     BUTTON BINDING — event delegation
   ══════════════════════════════════════════ */
-  function openModal() {
-    document.getElementById('modal-overlay').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeModal() {
-    document.getElementById('modal-overlay').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  function handleOverlayClick(e) {
-    if (e.target === document.getElementById('modal-overlay')) closeModal();
-  }
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeModal();
-  });
+  document.addEventListener('click', function(e) {
+    var t = e.target;
+    // Walk up in case click hits a child node (text, span)
+    while (t && t !== document) {
+      if (t.classList && t.classList.contains('js-open-modal')) { openModal(); return; }
+      if (t.classList && t.classList.contains('js-close-modal')) { closeModal(); return; }
+      if (t.id === 'modal-overlay') { closeModal(); return; }
+      t = t.parentNode;
+    }
+  }, true); // capture phase — fires before any GHL listener
 
   /* ══════════════════════════════════════════
      SCROLL REVEAL — Intersection Observer
@@ -1679,5 +1690,6 @@
     });
   });
 </script>
+<script src="https://link.shardanaconsulting.com/js/form_embed.js"></script>
 </body>
 </html>
