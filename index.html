@@ -215,7 +215,9 @@
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 16px;
-      overflow: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      max-height: 88vh;
       width: 100%;
       max-width: 540px;
       position: relative;
@@ -337,6 +339,10 @@
     }
 
     .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
       opacity: 0;
       animation: fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.55s forwards;
     }
@@ -1101,25 +1107,8 @@
       </p>
 
       <div class="hero-actions">
-        <div class="ghl-wrap">
-          <iframe src="https://link.shardanaconsulting.com/widget/form/QArwgVMPlTORYIWEadjA"
-                  style="width:100%;height:100%;border:none;border-radius:3px"
-                  id="inline-QArwgVMPlTORYIWEadjA-hero"
-                  data-layout="{'id':'INLINE'}"
-                  data-trigger-type="alwaysShow"
-                  data-trigger-value=""
-                  data-activation-type="alwaysActivated"
-                  data-activation-value=""
-                  data-deactivation-type="neverDeactivate"
-                  data-deactivation-value=""
-                  data-form-name="Landing Esperti Italia"
-                  data-height="993"
-                  data-layout-iframe-id="inline-QArwgVMPlTORYIWEadjA-hero"
-                  data-form-id="QArwgVMPlTORYIWEadjA"
-                  title="Landing Esperti Italia">
-          </iframe>
-        </div>
-        <p class="ghl-note">Selezioniamo massimo 3 nuovi clienti al mese.</p>
+        <button type="button" class="btn btn-primary js-open-modal">Prenota una call gratuita →</button>
+        <span class="hero-note">Selezioniamo massimo 3 nuovi clienti al mese.</span>
       </div>
 
     </div>
@@ -1475,23 +1464,9 @@
         </p>
       </div>
 
-      <div class="ghl-wrap reveal reveal-delay-2">
-        <iframe src="https://link.shardanaconsulting.com/widget/form/QArwgVMPlTORYIWEadjA"
-                style="width:100%;height:100%;border:none;border-radius:3px"
-                id="inline-QArwgVMPlTORYIWEadjA-contatto"
-                data-layout="{'id':'INLINE'}"
-                data-trigger-type="alwaysShow"
-                data-trigger-value=""
-                data-activation-type="alwaysActivated"
-                data-activation-value=""
-                data-deactivation-type="neverDeactivate"
-                data-deactivation-value=""
-                data-form-name="Landing Esperti Italia"
-                data-height="993"
-                data-layout-iframe-id="inline-QArwgVMPlTORYIWEadjA-contatto"
-                data-form-id="QArwgVMPlTORYIWEadjA"
-                title="Landing Esperti Italia">
-        </iframe>
+      <div class="reveal reveal-delay-2" style="margin-top:40px;text-align:center;">
+        <button type="button" class="btn btn-primary js-open-modal">Prenota la call gratuita →</button>
+        <p style="margin-top:16px;font-size:13px;color:#555;">Nessuno spam. Ti contattiamo entro 24 ore.</p>
       </div>
 
     </div>
