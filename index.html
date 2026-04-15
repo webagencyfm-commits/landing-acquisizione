@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shardana Consulting — Il tuo sistema di acquisizione clienti</title>
-  <meta name="description" content="Costruiamo il tuo ecosistema digitale da zero: funnel, automazioni, profilo social e 30 giorni di contenuti. Per coach, consulenti e professionisti che vogliono crescere.">
-  <meta property="og:title" content="Shardana Consulting — Il tuo sistema di acquisizione clienti">
-  <meta property="og:description" content="Funnel, automazioni, contenuti. Costruiamo il sistema che ti manca — tu continui a fare il tuo lavoro.">
+  <meta name="description" content="Costruiamo l'ecosistema digitale che ti dà le basi per monetizzare e scalare la tua professione — e ti accompagniamo mentre lo fai crescere. Quello che le altre agenzie non ti hanno mai dato.">
+  <meta property="og:title" content="Shardana Consulting — L'ecosistema digitale che ti mancava">
+  <meta property="og:description" content="Non solo un sistema. Ti costruiamo le fondamenta reali e ti accompagniamo lungo tutto il percorso di crescita.">
   <meta property="og:type" content="website">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,7 @@
       --orange:    #FF6200;
       --orange2:   #e85500;
       --white:     #ffffff;
-      --gray:      #888888;
+      --gray:      #aaaaaa;
       --gray-dark: #333333;
       --display:   'Barlow Condensed', sans-serif;
       --body:      'Barlow', sans-serif;
@@ -165,44 +165,88 @@
 
 
     /* ══════════════════════════════════════════
-       NAVIGATION
+       GHL INLINE FORM
     ══════════════════════════════════════════ */
-    .nav {
+    .ghl-wrap {
+      margin-top: 48px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      max-width: 580px;
+    }
+    .ghl-wrap iframe {
+      display: block;
+      width: 100%;
+      height: 717px;
+      border: none;
+    }
+    .ghl-note {
+      text-align: center;
+      font-size: 12px;
+      color: #333;
+      letter-spacing: 1px;
+      margin-top: 14px;
+    }
+
+    /* ══════════════════════════════════════════
+       POPUP MODAL
+    ══════════════════════════════════════════ */
+    .modal-overlay {
       position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 20px 0;
-      transition: background 0.3s ease, padding 0.3s ease;
-    }
-    .nav.scrolled {
-      background: rgba(10,10,10,0.95);
-      backdrop-filter: blur(12px);
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-inner {
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      backdrop-filter: blur(8px);
+      z-index: 999;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
     }
-    .nav-logo {
-      font-family: var(--display);
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--white);
-      text-decoration: none;
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
     }
-    .nav-logo span { color: var(--orange); }
-    .nav-cta {
-      font-size: 14px;
-      padding: 12px 28px;
-      white-space: nowrap;
+    .modal-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 540px;
+      position: relative;
+      transform: translateY(20px) scale(0.97);
+      transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
     }
-    @media (max-width: 480px) {
-      .nav-cta { display: none; }
+    .modal-overlay.open .modal-box {
+      transform: translateY(0) scale(1);
     }
+    .modal-box iframe {
+      display: block;
+      width: 100%;
+      height: 717px;
+      border: none;
+    }
+    .modal-close {
+      position: absolute;
+      top: 14px; right: 14px;
+      z-index: 10;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: #888;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .modal-close:hover { color: var(--white); border-color: #555; }
 
 
     /* ══════════════════════════════════════════
@@ -212,7 +256,7 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding-top: 120px;
+      padding-top: 60px;
       padding-bottom: 80px;
       position: relative;
       overflow: hidden;
@@ -282,7 +326,7 @@
     .hero-sub {
       font-size: clamp(17px, 2.5vw, 22px);
       font-weight: 400;
-      color: #888;
+      color: #d0d0d0;
       line-height: 1.65;
       max-width: 620px;
       margin-bottom: 52px;
@@ -291,10 +335,6 @@
     }
 
     .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 20px;
       opacity: 0;
       animation: fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.55s forwards;
     }
@@ -1019,19 +1059,6 @@
 <body>
 
 <!-- ══════════════════════════════════════════
-     NAVIGATION
-══════════════════════════════════════════ -->
-<nav class="nav" id="nav">
-  <div class="wrap">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">Shardana<span>.</span></a>
-      <a href="#contatto" class="btn btn-primary nav-cta">Prenota una call →</a>
-    </div>
-  </div>
-</nav>
-
-
-<!-- ══════════════════════════════════════════
      HERO
 ══════════════════════════════════════════ -->
 <section class="hero">
@@ -1051,12 +1078,26 @@
       </h1>
 
       <p class="hero-sub">
-        Costruiamo il tuo sistema di acquisizione clienti da zero — funnel, automazioni, profilo e 30 giorni di contenuti. Tu continui a fare il tuo lavoro. Il sistema porta i clienti.
+        Non ti diamo solo un sistema, ti diamo le fondamenta reali per monetizzare e scalare la tua professione. Lo costruiamo noi, da zero, e ti accompagniamo mentre lo fai crescere. Quello che le altre agenzie non ti hanno mai dato.
       </p>
 
       <div class="hero-actions">
-        <a href="#contatto" class="btn btn-primary">Prenota una call gratuita →</a>
-        <span class="hero-note">Selezioniamo massimo 3 nuovi clienti al mese.</span>
+        <div class="ghl-wrap">
+          <iframe src="https://link.shardanaconsulting.com/widget/form/motQtfOsid3l1mAcA7nq"
+                  style="width:100%;height:717px;border:none;"
+                  id="inline-form-hero"
+                  data-layout="{'id':'INLINE'}"
+                  data-trigger-type="alwaysShow"
+                  data-activation-type="alwaysActivated"
+                  data-deactivation-type="neverDeactivate"
+                  data-form-name="Contact Form"
+                  data-height="717"
+                  data-layout-iframe-id="inline-form-hero"
+                  data-form-id="motQtfOsid3l1mAcA7nq"
+                  title="Contact Form">
+          </iframe>
+        </div>
+        <p class="ghl-note">Selezioniamo massimo 3 nuovi clienti al mese.</p>
       </div>
 
     </div>
@@ -1154,7 +1195,7 @@
 
     <div class="pain-cta-row reveal">
       <p>Se ti riconosci anche solo in una di queste, <strong>non è un problema di competenze o motivazione.</strong></p>
-      <a href="#contatto" class="btn btn-primary">Risolviamolo insieme →</a>
+      <button class="btn btn-primary" onclick="openModal()">Risolviamolo insieme →</button>
     </div>
 
   </div>
@@ -1217,11 +1258,11 @@
     <div class="solution-header">
       <span class="label reveal">La soluzione</span>
       <h2 class="section-title reveal reveal-delay-1">
-        Il tuo ecosistema digitale,<br>
-        <span class="orange">costruito da zero.</span>
+        Non solo un sistema.<br>
+        <span class="orange">Un ecosistema completo.</span>
       </h2>
       <p class="reveal reveal-delay-2">
-        Non un corso, non consulenza generica. Costruiamo noi l'intero sistema — e lo consegniamo funzionante.
+        Non un corso, non consigli generici, non un template da compilare da soli. Costruiamo noi le fondamenta reali per monetizzare e scalare la tua professione — e non ti lasciamo solo dopo la consegna.
       </p>
     </div>
 
@@ -1263,9 +1304,10 @@
       </div>
 
       <div class="benefit-card reveal reveal-delay-3" style="background:rgba(255,98,0,0.04);border-color:rgba(255,98,0,0.15);display:flex;flex-direction:column;justify-content:center;text-align:center;gap:20px;">
-        <div style="font-family:var(--display);font-size:22px;font-weight:900;text-transform:uppercase;color:#444;">Il risultato?</div>
-        <div style="font-family:var(--display);font-size:38px;font-weight:900;text-transform:uppercase;color:var(--orange);line-height:1.1;">Un business che acquisisce clienti in modo prevedibile.</div>
-        <a href="#contatto" class="btn btn-primary" style="margin-top:8px;">Inizia ora →</a>
+        <div style="font-family:var(--display);font-size:22px;font-weight:900;text-transform:uppercase;color:#444;">E poi?</div>
+        <div style="font-family:var(--display);font-size:34px;font-weight:900;text-transform:uppercase;color:var(--orange);line-height:1.1;">Ti accompagniamo mentre il business cresce.</div>
+        <div style="font-size:15px;color:#555;line-height:1.6;">Non ti consegniamo un sistema e sparisce. Siamo lì per ottimizzarlo, farlo scalare e adattarlo con te.</div>
+        <button class="btn btn-primary" style="margin-top:8px;" onclick="openModal()">Inizia ora →</button>
       </div>
 
     </div>
@@ -1285,7 +1327,7 @@
     <div class="process-header">
       <span class="label reveal">Il processo</span>
       <h2 class="section-title reveal reveal-delay-1">
-        Tre step.<br><span class="orange">Poi il sistema lavora per te.</span>
+        Come funziona.<br><span class="orange">Dall'inizio alla crescita.</span>
       </h2>
     </div>
 
@@ -1313,8 +1355,8 @@
         <div class="step-num">03</div>
         <div class="step-body">
           <div class="step-badge">Dai 30 giorni</div>
-          <div class="step-title">Acquisisci clienti</div>
-          <p class="step-desc">Il sistema entra in funzione. Lead qualificati in entrata, contenuti pubblicati, automazioni attive. Il fatturato smette di essere casuale.</p>
+          <div class="step-title">Cresci, ti accompagniamo</div>
+          <p class="step-desc">Il sistema è live. Lead in entrata, contenuti pubblicati, automazioni attive. E noi restiamo — per ottimizzare, scalare e accompagnarti mentre il tuo business cresce davvero.</p>
         </div>
       </div>
 
@@ -1342,23 +1384,23 @@
         <ul class="forwho-list">
           <li>
             <span class="check">✓</span>
-            <span>Sei <strong>coach, consulente, nutrizionista, psicologo</strong> o professionista con un servizio già attivo</span>
+            <span>Sei <strong>coach, consulente, nutrizionista, psicologo</strong> o libero professionista — anche se stai partendo da zero</span>
           </li>
           <li>
             <span class="check">✓</span>
-            <span>Hai competenze eccellenti ma <strong>non un sistema digitale</strong> per monetizzarle online</span>
+            <span>Hai competenze solide ma <strong>non sai come monetizzarle online</strong> o non hai ancora un sistema per farlo</span>
           </li>
           <li>
             <span class="check">✓</span>
-            <span>Stai improvvisando sui social o <strong>non pubblichi quasi mai</strong>, pur sapendo che dovresti</span>
+            <span>Vuoi <strong>costruire le basi giuste fin dall'inizio</strong> — non rattoppare qualcosa che non funziona</span>
           </li>
           <li>
             <span class="check">✓</span>
-            <span>Vuoi un <strong>flusso costante di clienti qualificati</strong>, non lead casuali</span>
+            <span>Cerchi qualcuno che <strong>faccia il lavoro con te</strong>, non solo che ti dica cosa fare</span>
           </li>
           <li>
             <span class="check">✓</span>
-            <span>Capisci che un sistema richiede un investimento e <strong>sei pronto a farlo</strong></span>
+            <span>Capisci che crescere richiede un investimento e <strong>sei pronto a farlo sul serio</strong></span>
           </li>
         </ul>
       </div>
@@ -1368,19 +1410,19 @@
         <ul class="forwho-list">
           <li>
             <span class="cross">✗</span>
-            <span>Stai ancora <strong>definendo il tuo servizio</strong> o hai da poco iniziato l'attività</span>
+            <span>Cerchi <strong>soluzioni gratis</strong> o non sei disposto a investire nel tuo business</span>
           </li>
           <li>
             <span class="cross">✗</span>
-            <span>Cerchi una <strong>soluzione gratuita</strong> o non sei disposto a investire nel tuo business</span>
+            <span>Vuoi solo <strong>consigli, formazione o un corso</strong> — non qualcuno che costruisca e lavori con te</span>
           </li>
           <li>
             <span class="cross">✗</span>
-            <span>Vuoi solo <strong>consigli o formazione</strong>, non qualcuno che faccia il lavoro al posto tuo</span>
+            <span>Non hai ancora <strong>chiarezza su cosa fai</strong> e per chi — non abbiamo niente su cui costruire</span>
           </li>
           <li>
             <span class="cross">✗</span>
-            <span>Non sei disposto a <strong>dedicare 2 ore</strong> al briefing iniziale e alla call di scoperta</span>
+            <span>Stai cercando <strong>risultati overnight</strong> senza voler costruire qualcosa di solido</span>
           </li>
         </ul>
       </div>
@@ -1411,63 +1453,20 @@
         </p>
       </div>
 
-      <form class="lead-form reveal" id="lead-form" novalidate>
-
-        <div class="field">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required>
-        </div>
-
-        <div class="field">
-          <label for="cognome">Cognome</label>
-          <input type="text" id="cognome" name="cognome" placeholder="Il tuo cognome" required>
-        </div>
-
-        <div class="field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="nome@email.com" required>
-        </div>
-
-        <div class="field">
-          <label for="telefono">Telefono</label>
-          <input type="tel" id="telefono" name="telefono" placeholder="+39 xxx xxx xxxx" required>
-        </div>
-
-        <div class="field full">
-          <label for="professione">Professione</label>
-          <select id="professione" name="professione" required>
-            <option value="" disabled selected>Seleziona la tua professione</option>
-            <option value="coach">Coach</option>
-            <option value="consulente">Consulente / Advisor</option>
-            <option value="nutrizionista">Nutrizionista / Dietista</option>
-            <option value="psicologo">Psicologo / Psicoterapeuta</option>
-            <option value="personal-trainer">Personal Trainer</option>
-            <option value="avvocato">Avvocato / Commercialista</option>
-            <option value="medico">Medico / Professionista sanitario</option>
-            <option value="altro">Altro libero professionista</option>
-          </select>
-        </div>
-
-        <div class="field full">
-          <label for="messaggio">Qual è la tua sfida principale? <span style="color:#333;">(opzionale)</span></label>
-          <textarea id="messaggio" name="messaggio" placeholder="Raccontaci brevemente la situazione attuale..." rows="3" style="resize:vertical;"></textarea>
-        </div>
-
-        <div class="form-submit">
-          <button type="submit" class="btn btn-primary" id="submit-btn">
-            Prenota la call gratuita →
-          </button>
-          <p class="form-note">
-            Nessuno spam. Nessuna newsletter. Ti contattiamo entro 24 ore per fissare la call.
-          </p>
-        </div>
-
-      </form>
-
-      <div class="form-success" id="form-success">
-        <div class="success-icon">✅</div>
-        <h3>Richiesta inviata!</h3>
-        <p>Ti contatteremo entro 24 ore per fissare la tua call gratuita.<br>Controlla anche la cartella spam.</p>
+      <div class="ghl-wrap reveal reveal-delay-2">
+        <iframe src="https://link.shardanaconsulting.com/widget/form/motQtfOsid3l1mAcA7nq"
+                style="width:100%;height:717px;border:none;"
+                id="inline-form-contatto"
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-activation-type="alwaysActivated"
+                data-deactivation-type="neverDeactivate"
+                data-form-name="Contact Form"
+                data-height="717"
+                data-layout-iframe-id="inline-form-contatto"
+                data-form-id="motQtfOsid3l1mAcA7nq"
+                title="Contact Form">
+        </iframe>
       </div>
 
     </div>
@@ -1538,12 +1537,12 @@
 
       <div class="faq-item reveal">
         <button class="faq-q" onclick="toggleFaq(this)">
-          <span>Dopo il setup, posso gestirlo da solo?</span>
+          <span>Dopo il setup mi lasciate soli?</span>
           <div class="faq-icon">+</div>
         </button>
         <div class="faq-a">
           <div class="faq-a-inner">
-            Sì. Ti consegniamo un sistema documentato che puoi gestire autonomamente. Se preferisci delegare anche la gestione continuativa, offriamo anche <strong>servizi full-agency</strong> — social media management, ads, ottimizzazione continua. Lo valutiamo in base alle tue esigenze e ai risultati del primo periodo.
+            No. Costruire il sistema è il punto di partenza, non il punto di arrivo. <strong>Ti accompagniamo mentre cresce</strong> — ottimizzando il funnel, scalando le ads, gestendo i social, affinando la strategia. Il livello di supporto dipende da quello che decidiamo insieme in call. L'obiettivo è uno solo: che il tuo business cresca in modo reale e misurabile, non che tu rimanga bloccato dopo la prima consegna.
           </div>
         </div>
       </div>
@@ -1560,11 +1559,11 @@
 <section class="final-cta">
   <div class="wrap">
     <h2 class="final-cta-headline reveal">
-      Smetti di<br>
-      <span class="orange">improvvisare.</span>
+      Costruiamo insieme.<br>
+      <span class="orange">Per davvero.</span>
     </h2>
-    <p class="reveal reveal-delay-1">Ogni settimana senza sistema è fatturato che non arriva. La call è gratuita e senza impegno.</p>
-    <a href="#contatto" class="btn btn-primary reveal reveal-delay-2">Prenota la tua call →</a>
+    <p class="reveal reveal-delay-1">Non ti diamo un sistema e sparisce. Ti accompagniamo mentre il tuo business cresce. La call è gratuita, senza impegno.</p>
+    <button class="btn btn-primary reveal reveal-delay-2" onclick="openModal()">Prenota la tua call →</button>
     <p class="final-note reveal reveal-delay-3">Selezioniamo max 3 nuovi clienti al mese · Posti limitati</p>
   </div>
 </section>
@@ -1583,19 +1582,48 @@
 </footer>
 
 
+<!-- ══════════════════════════════════════════
+     POPUP MODAL
+══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()" aria-label="Chiudi">✕</button>
+    <iframe src="https://link.shardanaconsulting.com/widget/form/motQtfOsid3l1mAcA7nq"
+            style="width:100%;height:717px;border:none;"
+            id="modal-form"
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-activation-type="alwaysActivated"
+            data-deactivation-type="neverDeactivate"
+            data-form-name="Contact Form"
+            data-height="717"
+            data-layout-iframe-id="modal-form"
+            data-form-id="motQtfOsid3l1mAcA7nq"
+            title="Contact Form">
+    </iframe>
+  </div>
+</div>
+
+<script src="https://link.shardanaconsulting.com/js/form_embed.js"></script>
+
 <script>
   /* ══════════════════════════════════════════
-     CONFIG — Replace with your GHL webhook
+     MODAL
   ══════════════════════════════════════════ */
-  const FORM_ENDPOINT = 'https://services.leadconnectorhq.com/hooks/YOUR_WEBHOOK_ID/webhook-trigger/YOUR_TRIGGER_ID';
-
-  /* ══════════════════════════════════════════
-     NAVIGATION scroll effect
-  ══════════════════════════════════════════ */
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
+  function openModal() {
+    document.getElementById('modal-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('modal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('modal-overlay')) closeModal();
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
 
   /* ══════════════════════════════════════════
      SCROLL REVEAL — Intersection Observer
@@ -1624,68 +1652,6 @@
     // Toggle current
     if (!isOpen) item.classList.add('open');
   }
-
-  /* ══════════════════════════════════════════
-     FORM submission
-  ══════════════════════════════════════════ */
-  const form   = document.getElementById('lead-form');
-  const submitBtn = document.getElementById('submit-btn');
-  const success   = document.getElementById('form-success');
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    // Basic validation
-    const required = form.querySelectorAll('[required]');
-    let valid = true;
-    required.forEach(field => {
-      field.style.borderColor = '';
-      if (!field.value.trim()) {
-        field.style.borderColor = '#FF6200';
-        valid = false;
-      }
-    });
-    if (!valid) return;
-
-    // Submit state
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Invio in corso…';
-
-    const data = {
-      nome:        form.nome.value.trim(),
-      cognome:     form.cognome.value.trim(),
-      email:       form.email.value.trim(),
-      telefono:    form.telefono.value.trim(),
-      professione: form.professione.value,
-      messaggio:   form.messaggio.value.trim(),
-      fonte:       'landing-acquisizione',
-      timestamp:   new Date().toISOString(),
-    };
-
-    try {
-      // Try GHL webhook — if not configured, use mailto fallback
-      if (FORM_ENDPOINT.includes('YOUR_WEBHOOK_ID')) {
-        throw new Error('Endpoint not configured');
-      }
-      await fetch(FORM_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-        mode: 'no-cors',
-      });
-    } catch (_) {
-      // Fallback: open mailto
-      const subject = encodeURIComponent(`Nuova richiesta call — ${data.nome} ${data.cognome}`);
-      const body    = encodeURIComponent(
-        `Nome: ${data.nome} ${data.cognome}\nEmail: ${data.email}\nTelefono: ${data.telefono}\nProfessione: ${data.professione}\n\n${data.messaggio}`
-      );
-      window.open(`mailto:info@shardanaconsulting.com?subject=${subject}&body=${body}`);
-    }
-
-    // Show success
-    form.style.display = 'none';
-    success.classList.add('visible');
-  });
 
   /* ══════════════════════════════════════════
      Smooth scroll for anchor links
